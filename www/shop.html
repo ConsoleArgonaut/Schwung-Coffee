@@ -25,7 +25,7 @@ Ihr Name: <input type="text" id="nameField"><br>
 
     $(function () {
         $('#emailLink').on('click', function (event) {
-            var order = $( "#mailField" ).text().replace("\n", "%0A");
+            var order = $( "#mailField" ).val().replace("\n", "%0A");
             event.preventDefault();
             var email = 'order@schwung-coffee.ch';
             var subject = 'Bestellung';
