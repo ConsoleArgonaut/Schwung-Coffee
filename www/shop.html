@@ -1,42 +1,67 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Shop Demo</title>
+    <title>Shop - Schwung Coffee</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <script src="assets/js/default.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+<header>
+    <div class="topnav" id="myTopnav">
+        <div class="middle">
+            <ul class="leftSpace">
+                <li><a href="index.html"><h2>Startseite</h2></a></li>
+                <li><a href="shop.html"><h2>Bestellung</h2></a></li>
+                <li><a href="galerie.html"><h2>Galerie</h2></a></li>
+                <li><a href="beschwerden.html"><h2>Beschwerde</h2></a></li>
+                <li><a href="kontakt.html"><h2>Über uns</h2></a></li>
+                <li><a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                       onclick="myFunction()">&#9776;</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+</header>
 
-<p class="objectToBuy">Cafe - 1. Sorte</p>
-<p class="objectToBuy">Cafe - 2. Sorte</p>
-<p class="objectToBuy">Cafe - 3. Sorte</p>
+<main>
+    <div class="middle">
+        <p class="objectToBuy">Cafe - 1. Sorte</p>
+        <p class="objectToBuy">Cafe - 2. Sorte</p>
+        <p class="objectToBuy">Cafe - 3. Sorte</p>
 
-Ihre Bestellung: <br>
-<textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
-Ihr Name: <input type="text" id="nameField"><br>
+        Ihre Bestellung: <br>
+        <textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+        Ihr Name: <input type="text" id="nameField"><br>
 
-<a href="#" name="emailLink" id="emailLink">Bestellung Absenden</a>
+        <a href="#" name="emailLink" id="emailLink">Bestellung Absenden</a>
 
-<script>
-    $( ".objectToBuy" ).click(function() {
-        $( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
-        $( this ).slideUp();
-    });
+        <script>
+            $( ".objectToBuy" ).click(function() {
+                $( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
+                $( this ).slideUp();
+            });
 
-    $(function () {
-        $('#emailLink').on('click', function (event) {
-            var order = $( "#mailField" ).val().replace("\n", "%0A");
-            event.preventDefault();
-            var email = 'order@schwung-coffee.ch';
-            var subject = 'Bestellung';
-            var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
-                + order
-                + '%0A%0AMit freundlichen Grüssen%0A'
-                + $( "#nameField" ).val();
-            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
-        });
-    });
-</script>
-
+            $(function () {
+                $('#emailLink').on('click', function (event) {
+                    var order = $( "#mailField" ).val().replace("\n", "%0A");
+                    event.preventDefault();
+                    var email = 'order@schwung-coffee.ch';
+                    var subject = 'Bestellung';
+                    var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
+                        + order
+                        + '%0A%0AMit freundlichen Grüssen%0A'
+                        + $( "#nameField" ).val();
+                    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+                });
+            });
+        </script>
+    </div>
+</main>
+<footer>
+    <hr>
+    <p class="middle footer">Schwung Cafe - BlaBlaStrasse 00 - 8000 Zürich - Schwung-Coffee.ch - 044 444 44 44</p>
+</footer>
 </body>
 </html>

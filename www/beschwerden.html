@@ -1,33 +1,58 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Beschwerden Demo</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>Beschwerden - Schwung Coffee</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="assets/css/default.css"/>
+	<script src="assets/js/default.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+<header>
+	<div class="topnav" id="myTopnav">
+		<div class="middle">
+			<ul class="leftSpace">
+				<li><a href="index.html"><h2>Startseite</h2></a></li>
+				<li><a href="shop.html"><h2>Bestellung</h2></a></li>
+				<li><a href="galerie.html"><h2>Galerie</h2></a></li>
+				<li><a href="beschwerden.html"><h2>Beschwerde</h2></a></li>
+				<li><a href="kontakt.html"><h2>Über uns</h2></a></li>
+				<li><a href="javascript:void(0);" style="font-size:15px;" class="icon"
+					   onclick="myFunction()">&#9776;</a></li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+</header>
 
-<h1>Beschwerdenformular</h1>
+<main>
+	<div class="middle">
+		<h1>Beschwerdenformular</h1>
 
-<form class="complaintForm" id="complaintForm">
-	Name <input type="text" id="lastNameField"><br>
-	Vorname <input type="text" id="firstNameField"><br>
-	Besuchsdatum <input type="date" id="dateField"><br>
-	Email <input type="mail" id="dateField"><br>
-	Beschwerde <textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
-	<a href="#" name="sendComplaint" id="sendComplaint">Beschwerde Absenden</a>
-</form>
-<div id="mailSent">
-	Mail has been sent
-</div>
+		<form class="complaintForm" id="complaintForm">
+			Name <input type="text" id="lastNameField"><br>
+			Vorname <input type="text" id="firstNameField"><br>
+			Besuchsdatum <input type="date" id="dateField"><br>
+			Email <input type="mail" id="dateField"><br>
+			Beschwerde <textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+			<a href="#" name="sendComplaint" id="sendComplaint">Beschwerde Absenden</a>
+		</form>
+		<div id="mailSent">
+			Mail has been sent
+		</div>
 
-<script>
-	$( "#mailSent" ).slideUp();
-    $( "#sendComplaint" ).click(function() {
-        $( "#complaintForm" ).slideUp();
-		$( "#mailSent" ).slideDown();
-    });
-</script>
-
+		<script>
+            $( "#mailSent" ).slideUp();
+            $( "#sendComplaint" ).click(function() {
+                $( "#complaintForm" ).slideUp();
+                $( "#mailSent" ).slideDown();
+            });
+		</script>
+	</div>
+</main>
+<footer>
+	<hr>
+	<p class="middle footer">Schwung Cafe - BlaBlaStrasse 00 - 8000 Zürich - Schwung-Coffee.ch - 044 444 44 44</p>
+</footer>
 </body>
 </html>
