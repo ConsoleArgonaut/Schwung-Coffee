@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Beschwerden Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Beschwerdenformular</h1>
+
+<form class="complaintForm" id="complaintForm">
+	Name <input type="text" id="lastNameField"><br>
+	Vorname <input type="text" id="firstNameField"><br>
+	Besuchsdatum <input type="date" id="dateField"><br>
+	Email <input type="mail" id="dateField"><br>
+	Beschwerde <textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+	<a href="#" name="sendComplaint" id="sendComplaint">Beschwerde Absenden</a>
+</form>
+<div id="mailSent">
+	Mail has been sent
+</div>
+
+<script>
+	$( "#mailSent" ).slideUp();
+    $( "#sendComplaint" ).click(function() {
+        $( "#complaintForm" ).slideUp();
+		$( "#mailSent" ).slideDown();
+    });
+</script>
+
+</body>
+</html>
