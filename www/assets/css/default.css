@@ -2,13 +2,13 @@
 
 body {
     color: #cc9933;
-    font: 18px "Times New Roman",serif;
+    font: 1em "Times New Roman",serif;
     margin: 0px;
     width: auto;
 }
 
 .footer {
-    font: 14px "Times New Roman",serif;
+    font: 1em "Times New Roman",serif;
     text-align: center;
     padding: 10px;
 }
@@ -18,22 +18,22 @@ body {
 }
 
 .middle {
-    width: 33%;
+    width: 50%;
     margin: 0 auto;
 }
 
 h1 {
-    font: 34px "Courier New", Courier, monospace;
+    font: 3em "Courier New", Courier, monospace;
     font-weight: bold;
 }
 
 h2 {
-    font: 22px "Courier New", Courier, monospace;
+    font: 1.2em "Courier New", Courier, monospace;
     font-weight: bold;
 }
 
 h3 {
-    font: 22px "Courier New", Courier, monospace;
+    font: 1em "Courier New", Courier, monospace;
     font-weight: regular;
     text-align: left;
     margin-bottom: 5px;
@@ -47,7 +47,7 @@ hr {
 }
 
 th {
-    padding-right: 60px;
+    padding-right: 35px;
 }
 
 .hrSpecial {
@@ -74,7 +74,7 @@ a:hover {
 }
 
 .leftSpace {
-    padding-left: 40px;
+    padding-left: 25px;
 }
 
 .padBot {
