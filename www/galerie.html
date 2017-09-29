@@ -4,6 +4,7 @@
     <title>Galerie - Schwung Coffee</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="assets/css/default.css"/>
+    <link rel="stylesheet" href="assets/css/lightbox.css"/>
     <script src="assets/js/default.js"></script>
 </head>
 <body>
@@ -26,7 +27,92 @@
 
 <main>
     <div class="middle">
-        This is a Gallery!
+
+        <h1>Unsere Galerie</h1>
+
+        <div class="row">
+            <div class="column">
+                <img src="assets\images\gallery\img01.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img02.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img03.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img04.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img05.png" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img06.png" onclick="openModal();currentSlide(6)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img07.png" onclick="openModal();currentSlide(7)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img08.png" onclick="openModal();currentSlide(8)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img09.png" onclick="openModal();currentSlide(9)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="assets\images\gallery\img10.png" onclick="openModal();currentSlide(10)" class="hover-shadow">
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <div class="mySlides">
+                    <div class="numbertext">1 / 10</div>
+                    <img src="assets\images\gallery\img01.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">2 / 10</div>
+                    <img src="assets\images\gallery\img02.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">3 / 10</div>
+                    <img src="assets\images\gallery\img03.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">4 / 10</div>
+                    <img src="assets\images\gallery\img04.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">5 / 10</div>
+                    <img src="assets\images\gallery\img05.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">6 / 10</div>
+                    <img src="assets\images\gallery\img06.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">7 / 10</div>
+                    <img src="assets\images\gallery\img07.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">8 / 10</div>
+                    <img src="assets\images\gallery\img08.png">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">9 / 10</div>
+                    <img src="assets\images\gallery\img09.png" >
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">10 / 10</div>
+                    <img src="assets\images\gallery\img10.png">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 <footer>
