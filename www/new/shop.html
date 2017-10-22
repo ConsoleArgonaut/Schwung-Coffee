@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Shop - Schwung Coffee</title>
+	<link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="assets/css/default.css"/>
+    <script src="assets/js/default.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="topnav" id="myTopnav">
+        <div class="middle">
+            <ul class="leftSpace">
+                <li><a href="index.html"><h2>Startseite</h2></a></li>
+                <li><a href="shop.html"><h2>Bestellung</h2></a></li>
+                <li><a href="galerie.html"><h2>Galerie</h2></a></li>
+                <li><a href="beschwerden.html"><h2>Beschwerde</h2></a></li>
+                <li><a href="kontakt.html"><h2>Über uns</h2></a></li>
+                <li><a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                       onclick="myFunction()">&#9776;</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+</header>
+
+<main>
+    <div class="middle">
+        <p class="objectToBuy"><img src="assets\images\products\espresso.jpg" width="50px">Espresso 4.00 CHF</p>
+        <p class="objectToBuy"><img src="assets\images\products\espresso.jpg" width="50px">Doppelter Espresso 4.90 CHF</p>
+        <p class="objectToBuy"><img src="assets\images\products\kaffee.jpg" width="50px">Kaffee Natur 3.80 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\coffee.jpg" width="50px">Kaffee Creme 3.90 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\coffee.jpg" width="50px">Schale 4.10 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\coffee.jpg" width="50px">Schale Dunkel 4.10 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\kaffi.jpg" width="50px">Cappuccino 4.50 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\kaffi.jpg" width="50px">Latte Macchiato 5.50 CHF</p>
+		
+		<p class="objectToBuy"><img src="assets\images\products\hotchoc.jpg" width="50px">Heisse Schokolade 5.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\hotchoc.jpg" width="50px">Ovomaltine 5.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\hotchoc.jpg" width="50px">Tasse Milch 2.50 CHF</p>
+		
+		<p class="objectToBuy"><img src="assets\images\products\croissant.jpg" width="50px">Gipfeli 2.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\croissant.jpg" width="50px">Weggli 1.50 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\sandwich.jpg" width="50px">Sandwich 5.50 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\sandwich.jpg" width="50px">S&uuml;ssgeb&auml;ck 2.50 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\burger.jpg" width="50px">Schnitzelbrot 6.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\burger.jpg" width="50px">Hamburger 5.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\burger.jpg" width="50px">Pommes 4.50 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\burger.jpg" width="50px">Hamburger mit Pommes 8.00 CHF</p>
+		
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Fanta 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Cola 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Eistee 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Orangensaft 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Multivitaminsaft 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Traubensaft 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Sprite 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+		<p class="objectToBuy"><img src="assets\images\products\soda.jpg" width="50px">Schweppes 3dl 2.50 CHF / 5dl 4.00 CHF</p>
+
+        Ihre Bestellung: <br>
+        <textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+        Ihr Name: <input type="text" id="nameField"><br>
+
+        <a href="#" name="emailLink" id="emailLink">Bestellung Absenden</a><br>
+
+        <script>
+            $( ".objectToBuy" ).click(function() {
+                $( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
+                $( this ).slideUp();
+            });
+
+            $(function () {
+                $('#emailLink').on('click', function (event) {
+                    var order = $( "#mailField" ).val().replace("\n", "%0A");
+                    event.preventDefault();
+                    var email = 'order@schwung-coffee.ch';
+                    var subject = 'Bestellung';
+                    var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
+                        + order
+                        + '%0A%0AMit freundlichen Grüssen%0A'
+                        + $( "#nameField" ).val();
+                    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+                });
+            });
+        </script>
+    </div>
+</main>
+<footer>
+    <hr>
+    <p class="middle footer">Schwung Coffee - Schwungstrasse 91 - Mannsheim - Schwung-Coffee.ch - 044 444 44 44</p>
+</footer>
+</body>
+</html>
