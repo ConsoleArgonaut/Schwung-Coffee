@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p class="objectToBuy">Cafe - 1. Sorte</p>
+<p class="objectToBuy">Cafe - 2. Sorte</p>
+<p class="objectToBuy">Cafe - 3. Sorte</p>
+
+Ihre Bestellung: <br>
+<textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+Ihr Name: <input type="text" id="nameField"><br>
+
+<a href="#" name="emailLink" id="emailLink">Bestellung Absenden</a>
+
+<script>
+    $( ".objectToBuy" ).click(function() {
+        $( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
+        $( this ).slideUp();
+    });
+
+    $(function () {
+        $('#emailLink').on('click', function (event) {
+            var order = $( "#mailField" ).val().replace("\n", "%0A");
+            event.preventDefault();
+            var email = 'order@schwung-coffee.ch';
+            var subject = 'Bestellung';
+            var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
+                + order
+                + '%0A%0AMit freundlichen Grüssen%0A'
+                + $( "#nameField" ).val();
+            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+        });
+    });
+</script>
+
+</body>
+</html>
