@@ -1,0 +1,28 @@
+body {
+	font-family: comic sans ms;
+	color: white;
+	background-image: url("http://i.imgur.com/nix71tO.png");
+}
+
+h1 {
+	text-align: center;
+	font-family:comic sans ms;
+	color: red;
+}
+
+.header {
+	height: 200px;
+	background-image: url("http://image.blingee.com/images18/content/output/000/000/000/6ce/631662842_240130.gif");
+	/*background-color: black;*/
+}
+
+.thread {
+	border-style: solid;
+    border-width: 2px;
+	/*text-align: center;*/
+}
+
+hr {
+	color: black;
+	width: 3px;
+}

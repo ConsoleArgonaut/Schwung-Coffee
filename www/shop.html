@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Shop - Schwung Coffee</title>
+	<link rel="shortcut icon" type="favicon.ico" href="favicon.ico">
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="assets/css/default.css"/>
     <script src="assets/js/default.js"></script>
@@ -27,41 +28,72 @@
 
 <main>
     <div class="middle">
-        <p class="objectToBuy">Cafe - 1. Sorte</p>
-        <p class="objectToBuy">Cafe - 2. Sorte</p>
-        <p class="objectToBuy">Cafe - 3. Sorte</p>
+		<h1>Online Shop</h1>
+		<ul class="objectOverview">
+			<ul class="objectToBuy"><img src="assets\images\products\espresso.jpg"/>Espresso -<br>4.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\espresso.jpg"/>Doppelter Espresso -<br>4.90 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\kaffee.jpg"/>Kaffee Natur -<br>3.80 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\coffee.jpg"/>Kaffee Creme -<br>3.90 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\coffee.jpg"/>Schale -<br>4.10 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\coffee.jpg"/>Schale Dunkel -<br>4.10 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\kaffi.jpg"/>Cappuccino -<br>4.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\kaffi.jpg"/>Latte Macchiato -<br>5.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\hotchoc.jpg"/>Heisse Schokolade -<br>5.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\hotchoc.jpg"/>Ovomaltine -<br>5.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\hotchoc.jpg"/>Tasse Milch -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\croissant.jpg"/>Gipfeli -<br>2.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\croissant.jpg"/>Weggli -<br>1.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\sandwich.jpg"/>Sandwich -<br>5.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\sandwich.jpg"/>S&uuml;ssgeb&auml;ck -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\burger.jpg"/>Schnitzelbrot -<br>6.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\burger.jpg"/>Hamburger -<br>5.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\burger.jpg"/>Pommes -<br>4.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\burger.jpg"/>Hamburger mit Pommes -<br>8.00 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Fanta 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Cola 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Eistee 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Orangensaft 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Multivitaminsaft 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Traubensaft 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Sprite 3dl -<br>2.50 CHF</ul>
+			<ul class="objectToBuy"><img src="assets\images\products\soda.jpg"/>Schweppes 3dl -<br>2.50 CHF</ul>
+		</ul>
+		
+		<div class="buyForm">
+			<label>Ihre Bestellung:</label> <br>
+			<textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+			
+			<label>Ihr Name:</label>
+			<input type="text" id="nameField"><br>
 
-        Ihre Bestellung: <br>
-        <textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
-        Ihr Name: <input type="text" id="nameField"><br>
+			<a href="#" name="emailLink" id="emailLink">Bestellung Absenden</a><br>
+			<br>
+			<script>
+				$( ".objectToBuy" ).click(function() {
+					$( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
+					$( this ).slideUp();
+				});
 
-        <a href="#" name="emailLink" id="emailLink">Bestellung Absenden</a>
-
-        <script>
-            $( ".objectToBuy" ).click(function() {
-                $( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
-                $( this ).slideUp();
-            });
-
-            $(function () {
-                $('#emailLink').on('click', function (event) {
-                    var order = $( "#mailField" ).val().replace("\n", "%0A");
-                    event.preventDefault();
-                    var email = 'order@schwung-coffee.ch';
-                    var subject = 'Bestellung';
-                    var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
-                        + order
-                        + '%0A%0AMit freundlichen Grüssen%0A'
-                        + $( "#nameField" ).val();
-                    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
-                });
-            });
-        </script>
+				$(function () {
+					$('#emailLink').on('click', function (event) {
+						var order = $( "#mailField" ).val().replace("\n", "%0A");
+						event.preventDefault();
+						var email = 'order@schwung-coffee.ch';
+						var subject = 'Bestellung';
+						var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
+							+ order
+							+ '%0A%0AMit freundlichen Grüssen%0A'
+							+ $( "#nameField" ).val();
+						window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+					});
+				});
+			</script>
+		</div>
     </div>
 </main>
 <footer>
     <hr>
-    <p class="middle footer">Schwung Cafe - BlaBlaStrasse 00 - 8000 Zürich - Schwung-Coffee.ch - 044 444 44 44</p>
+    <p class="middle footer">Schwung Coffee - Schwungstrasse 91 - Mannsheim - Schwung-Coffee.ch - 044 444 44 44</p>
 </footer>
 </body>
 </html>
