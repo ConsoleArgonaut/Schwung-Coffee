@@ -1,5 +1,5 @@
 .row > .column {
-    padding: 0 8px;
+    padding: 8px;
 }
 
 .row:after {
@@ -10,11 +10,14 @@
 
 .column {
     float: left;
-    width: 20%;
+    width: 150px;
+	height:150px;
+	padding-bottom: 50px;
 }
 
 .column img{
     width: 100%;
+	height:100%;
 }
 
 /* The Modal (background) */
