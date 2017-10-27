@@ -13,6 +13,10 @@ body {
     padding: 10px;
 }
 
+.middle .footer{
+	font-size: 1em!important;
+}
+
 .centered {
     text-align: center;
 }
@@ -170,3 +174,12 @@ li a:hover {
 
 .buyForm label{
 }
+
+.complaintForm input{
+	width:100%;
+}
+
+.complaintForm textarea{
+	width:100%;
+}
+
