@@ -61,7 +61,7 @@
 		
 		<div class="buyForm">
 			<label>Ihre Bestellung:</label> <br>
-			<textarea name="textarea" style="width:250px;height:150px;" id="mailField"></textarea><br>
+			<textarea name="textarea" style="width:250px;height:150px;" id="mailField">*** Bestellung *** </textarea><br>
 			
 			<label>Ihr Name:</label>
 			<input type="text" id="nameField"><br>
@@ -70,17 +70,17 @@
 			<br>
 			<script>
 				$( ".objectToBuy" ).click(function() {
-					$( "#mailField" ).append( "1 Stk:   " + $( this ).text() + "\n");
+					$( "#mailField" ).append( "\n1 Stk:   " + $( this ).text() + " *** ");
 					$( this ).slideUp();
 				});
 
 				$(function () {
 					$('#emailLink').on('click', function (event) {
-						var order = $( "#mailField" ).val().replace("\n", "%0A");
+						var order = $( "#mailField" ).val().replace("\n", "");
 						event.preventDefault();
 						var email = 'order@schwung-coffee.ch';
 						var subject = 'Bestellung';
-						var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0A Ich würde gerne folgendes bestellen:%0A%0A'
+						var emailBody = 'Sehr geehrte Mitarbeiter des Schwung Coffee %0A%0AIch würde gerne folgendes bestellen:%0A%0A'
 							+ order
 							+ '%0A%0AMit freundlichen Grüssen%0A'
 							+ $( "#nameField" ).val();
